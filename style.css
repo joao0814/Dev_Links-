@@ -46,8 +46,9 @@ body * {
   /* sans-serif significa fontes sem serifa, que significa que são fonte mais simples e sem designe, são fontes mais quadradas e retas */
 }
 #container {
-  width: 320px;
+  width: 100%;
   /* largura de 320px */
+  max-width: 588px;
   margin: 56px auto 0px;
   /* 56 px top - auto dos lados - 0px em baixo */
   padding: 0 24px;
