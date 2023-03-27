@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <!-- UTF-8 é utilizado para entender todo tipo de caractere, incluindo acentos etc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Viewport é toda parte que pode ser vista na nossa página -->
+    <title>Projeto</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- A tag <link> faz conexões entre duas entidades, por exemplo um arquivo css, ela não aparece no front end -->
+  </head>
+
+  <body>
+    <div id="container">
+      <!-- Foto de perfil -->
+      <div id="profile">
+        <img
+          src="./Assets/Avatar.png"
+          alt="Foto de João Pedro sorrindo em um salão de festas, de blusa preta com uma piscina de fundo e com cor azul no led da piscina."
+        />
+
+        <!-- Meu perfil do Github -->
+        <p>@joao0814</p>
+      </div>
+
+      <div class="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <!-- Lista não ordenada <ul> - <ol> lista ordenada -->
+      <ul>
+        <!-- tag para criar linhas na listas <li> -->
+        <li>
+          <!-- A tag <a> serve para criar uma hiperconexão no front end, ela aparece na página -->
+          <a href="https://github.com/joao0814" target="_blank">Projetos</a>
+          <!-- O atributo "_blank" serve para que ao clicar no link, abra uma nova página em vez de abrir na mesma -->
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/injo%C3%A3o-pedro-de-melo-fran%C3%A7a-4990791b7/"
+            target="_blank"
+            >Linkedin
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/jao_pedro14_08/" target="_blank"
+            >Instagram
+          </a>
+        </li>
+
+        <li>
+          <a href="https://app.rocketseat.com.br/devlinks" target="_blank"
+            >Devlinks</a
+          >
+        </li>
+      </ul>
+
+      <!-- Social Links -->
+      <div id="social-links">
+        <a href="https://github.com/joao0814" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/injo%C3%A3o-pedro-de-melo-fran%C3%A7a-4990791b7/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-melo-franca"
+          target="_blank"
+        >
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="https://app.rocketseat.com.br/devlinks" target="_blank">
+          <ion-icon name="rocket"></ion-icon>
+        </a>
+      </div>
+
+      <!-- Rodapé -->
+      <footer>
+        Feito com ♥ por João Pedro acompanhando a
+        <a href="https://app.rocketseat.com.br/" target="_blank">Rocketseat</a>
+      </footer>
+
+      <!-- Script para usar os icones acima -->
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+      <script src="./script.js"></script>
+    </div>
+  </body>
+</html>

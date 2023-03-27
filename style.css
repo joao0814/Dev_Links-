@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* o "box-sizing: border-box" serve para que o tamanho seja contado até a borda da caixa - é setado um tamanho independe do conteudo */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./Assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(Assets/moom-stars.svg);
+}
+
+/*Modo light - esse "--" e texto é uma variável, e para chama-lá é necesssário usar o atributo "var();" */
+.light {
+  --text-color: black;
+  --bg-url: url(./Assets/bg-mobile-light.png);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.5);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(Assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./Assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+
+  /* background: color image repeat position/size */
+  background: var(--bg-url) no-repeat center/cover;
+  /* Fazendo dessa maneira, podemos ver que ele diminui a quantidade de linhas digitadas */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  /* o sinal de "*" serve para mostrar que é algo global, que todos os itens seguirão o que eu colocar */
+  /* sans-serif significa fontes sem serifa, que significa que são fonte mais simples e sem designe, são fontes mais quadradas e retas */
+}
+#container {
+  width: 320px;
+  /* largura de 320px */
+  margin: 56px auto 0px;
+  /* 56 px top - auto dos lados - 0px em baixo */
+  padding: 0 24px;
+}
+
+/*Profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*Parte do botão de dark mode e white mode*/
+.switch {
+  /*relative serve para que o icone não saia de dentro da caixa do switch*/
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+/*Botão de modo claro ou escuro*/
+.switch button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  /*position serve para sobrepor os itens*/
+  position: absolute;
+  /*z-index serve para trocar a camada do item*/
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.light .switch button {
+  right: 0;
+  left: initial;
+}
+.switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Links - Lista */
+ul {
+  list-style: none;
+  display: flex;
+  /* O "display:flex;" serve paras que o elemento cubra 100% do  tamanho do container */
+  gap: 16px;
+  /*o "gap:;" serve para dar espaço entre os itens */
+  flex-direction: column;
+  /* O flex-direction serve para deixa alinhado na direção que você deseja, eu deixei como coluna*/
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  /* Alinha os itens no centro do eixo x dentro da box */
+  justify-content: center;
+  /* alinha o conteúdo no centro do eixo y dentro da box */
+  padding: 16px 24px;
+  background: var(--surface-color);
+  /* A ordem:        red green blue alpha, o 255 é o mais forte dessas cores, e o alpha é a transparência, o mais alto do alpha é 1.0, quanto maior o número, mais branco fica, essa combinação de cores dá como branco */
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  /* border-radius serve para arredondar a borda da box */
+  backdrop-filter: blur(4px);
+  /* Deixa a box com um fundo com blur (borrado) */
+  -webkit-backdrop-filter: blur(4px);
+  /* O prefixo -webkit serve para fazer com que o navegador entenda esse tipo de atributo CSS, esse é em especifico do Safari, podendo ser conferido no site do caniuse.com, somente colocar o atributo que gostaria de verificar se os navegadores entendem sem conflito */
+  text-decoration: none;
+  /* decoração de texto*/
+  font-weight: 500;
+  /* font-weight é o peso da fonte, acima de 500 já considerado bold(negrito), 0 400 é considerado o normal*/
+
+  transition: background 0.2s;
+  /* Serve para colocar uma transição elemento que estiver dentro da tag */
+}
+
+/* pseudo-selector - o hover é quando passamos o mouse em cima do botão */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  padding: 24px 0;
+  display: flex;
+  font-size: 24px;
+  /* esse font-size serviu para aumentar o tamanho dos icones */
+  justify-content: center;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  display: block;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
