@@ -37,6 +37,7 @@ body {
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat center/cover;
   /* Fazendo dessa maneira, podemos ver que ele diminui a quantidade de linhas digitadas */
+  height: 100vh;
 }
 
 body * {
@@ -44,6 +45,7 @@ body * {
   color: var(--text-color);
   /* o sinal de "*" serve para mostrar que é algo global, que todos os itens seguirão o que eu colocar */
   /* sans-serif significa fontes sem serifa, que significa que são fonte mais simples e sem designe, são fontes mais quadradas e retas */
+  
 }
 #container {
   width: 100%;
@@ -175,4 +177,17 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/*Media queries*/
+
+@media (min-width: 700px;){
+  
+  :root{
+    --bg-url(./assets/bg-desktop.png);
+  }
+
+  .light {
+    --bg_url: url(./assets/bg-desktop-light.png);
+  }
 }
